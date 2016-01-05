@@ -18,10 +18,10 @@ class CategoryModel extends BaseModel {
     
     
     public function addCategory($categoryData) {
-        $statement = 'INSERT INTO post (title) VALUES (:title))';       
+        $statement = 'INSERT INTO category (title) VALUES (:title))';
         $qery = $this->connect->prepare($statement, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
         if($categoryData) {
-            $qery->execute(array(':title' => $categoryData['title'], ':post_title' => $categoryData['post_title']));
+            $qery->execute(array(':title' => $categoryData['title']));
         }
     }
 
