@@ -12,8 +12,12 @@ abstract class Controller {
     }
     
     public function redirect($url) {
-        
-        header("location: {$url}");
+        if (headers_sent()){
+            die('<script type="text/javascript">window.location.href="' . $url . '";</script>');
+        }else{
+            header('Location: ' . $url);
+            die();
+        }
     }
 
 }

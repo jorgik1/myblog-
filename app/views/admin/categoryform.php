@@ -9,7 +9,7 @@
                    <select id="parent_category" name="parent">
                        <option selected value="<?php if (isset($_POST['parent'])) echo $_POST['parent']; ?>"></option>
                 <?php foreach ($data['categories'] as $category) { ?>
-                       <option value="<?php echo $category['category_id']; ?>"><?php echo $category['title'] ?></option>
+                       <option value="<?php echo $category['id']; ?>"><?php echo $category['title'] ?></option>
                 <?php } ?>
             </select>
         </p>

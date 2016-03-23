@@ -19,12 +19,14 @@ class CategoryController extends Controller {
             if ($catTitle == '') {
                 $error[] = 'Title is required';
             }
-            if (!$error) {
-                $data = ['title' => $catTitle];
-                $model->addCategory($data);
-                $this->redirect('home');
 
-            }
+                
+                    $data = ['title' => $catTitle];
+                    $model->addCategory($data);
+                    $this->redirect('home');
+    
+                
+
         }
 
     }
